@@ -35,7 +35,7 @@ def chat():
     try:
         # Enviar la pregunta al modelo de OpenAI
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",  # Modelo de lenguaje a usar
+            model="gpt-4-turbo",  # Modelo de lenguaje a usar
             messages=[{"role": "user", "content": question}]
         )
 
