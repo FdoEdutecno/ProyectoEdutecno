@@ -29,14 +29,14 @@ stream = audio.open(format=FORMAT, channels=CHANNELS,
                     rate=RATE, input=True,
                     frames_per_buffer=CHUNK)
 
-print("🎙️ Grabando audio...")
+print("Grabando audio...")
 frames = []
 
 for _ in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
     data = stream.read(CHUNK)
     frames.append(data)
 
-print("✅ Grabación finalizada")
+print("Grabación finalizada")
 
 # Detener y cerrar el stream
 stream.stop_stream()
@@ -60,5 +60,9 @@ with open(WAVE_OUTPUT_FILENAME, "rb") as audio_file:
     )
 
 # Mostrar el texto transcrito
-print("\n📝 Texto transcrito:")
+print("\nTexto transcrito:")
 print(transcript)
+
+# Eliminar el archivo WAV después de la transcripción
+os.remove(WAVE_OUTPUT_FILENAME)
+print(f"Archivo {WAVE_OUTPUT_FILENAME} eliminado.")
