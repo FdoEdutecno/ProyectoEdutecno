@@ -4,9 +4,7 @@
 #include <Base64.h>
 #include <Arduino_JSON.h>
 #include <HTTPClient.h>
-
-//APIKEY
-const char *apiKey = "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";
+#include "apiconfig.h"
 
 // Configuración de la red Wi-Fi
 const char *ssid = "Sophia 2.4";
